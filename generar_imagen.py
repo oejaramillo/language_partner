@@ -5,7 +5,6 @@ import base64
 
 api_host = os.getenv('API_HOST', 'https://api.stability.ai')
 api_key = os.getenv("STABILITY_API_KEY")
-print(api_key)
 
 # Stability api request
 def stability_call(folder, endpoint):
