@@ -4,7 +4,6 @@ import json
 
 # OpenAI api request
 #openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-openai_client = OpenAI(api_key='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')
 MODEL = "gpt-3.5-turbo"
 
 conversacion = 'conversacion.json'

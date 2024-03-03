@@ -7,7 +7,7 @@ import json
 
 
 # Openai credentials
-openai_client = OpenAI(api_key='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')
+openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 class escuchar:
     def __init__(self, modelo, reconocedor=sr.Recognizer()):
@@ -22,7 +22,7 @@ class escuchar:
     def archivo_temporal(self):
         with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as tmpfile:
             self.tmpfile_nombre = tmpfile.name
-            tmpfile.write(self.audio)
+            tmpfile.write(self.audio.get_wav_data())
 
     def transcripcion(self):
         with open(self.tmpfile_nombre, 'rb') as audio_file:
@@ -82,8 +82,33 @@ class hablar:
 
     def hablar(self):
         playsound(self.tmpfile_nombre)
-
+        
+def conversar(modelo_escuchar, modelo_pensar, prompt_inicial, modelo_hablar, voz):
+    oido = escuchar(modelo_escuchar)
+    cerebro = pensar(modelo_pensar, prompt_inicial)
+    boca = hablar(modelo_hablar, voz)
     
+    while True:
+        oido.reconocimiento()
+        oido.archivo_temporal()
+        oido.transcripcion()
+
+        if oido.respuesta.lower() == "Salir":
+            break
+        print("Se escucho: ", oido.respuesta) # debug
+
+        cerebro.procesar(oido.respuesta)
+        print("El modelo responde: ", cerebro.reply) # debug
+        cerebro.memoria()
+
+        boca.procesar(cerebro.reply)
+        boca.archivo_temporal()
+        boca.hablar()
+
+conversar(modelo_escuchar="whisper-1", modelo_pensar="gpt-3.5-turbo", prompt_inicial='conversacion', modelo_hablar="tts-1", voz="nova")
+
+
+
 
 
 

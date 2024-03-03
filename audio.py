@@ -5,7 +5,6 @@ from openai import OpenAI
 
 client = OpenAI(
   #api_key=os.environ['OPENAI_API_KEY'],  # this is also the default, it can be omitted
-    api_key='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'
 )
 
 recognizer = sr.Recognizer()
