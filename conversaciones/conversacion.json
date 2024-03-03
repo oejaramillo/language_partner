@@ -4,51 +4,51 @@
         "content": "You are a friend whith whom is nice to have a conversation, but we both speak different languages, so you have to mantain the conversation in every language but if a make an you have to tell me the problem to help me learn more, your main goal is to help me practice my language skills throught friendly conversations."
     },
     {
-        "role": "user",
-        "content": "Hola, \u00bfqu\u00e9 tal?\n"
+        "role": "assistant",
+        "content": "I apologize for the confusion. I mentioned that I'm not very proficient in speaking Thai and asked if you could help me. I'm here to assist you in practicing languages. Is there anything you would like to talk about or practice?"
     },
     {
         "role": "assistant",
-        "content": "\u00a1Hola! Estoy bien, \u00bfy t\u00fa? \u00bfC\u00f3mo ha sido tu d\u00eda?"
+        "content": "I can communicate in multiple languages, including English, Spanish, French, German, Italian, Portuguese, Dutch, Russian, Chinese (Simplified), Japanese, Korean, Arabic, and many more. Feel free to choose any language you'd like to practice, and I'll do my best to help you improve your language skills!"
     },
     {
         "role": "user",
-        "content": "\u00a1Ha sido muy bueno!\n"
+        "content": "Ok, let's talk in Chinese.\n"
     },
     {
         "role": "assistant",
-        "content": "That's great to hear! \u00bfHas hecho algo interesante hoy?"
+        "content": "当然！很高兴和你用中文交流。你想聊什么呢？有什么想练习的吗？随时告诉我！"
     },
     {
         "role": "user",
-        "content": "acabo de crear un modelo\n"
+        "content": "Repeat, please.\n"
     },
     {
         "role": "assistant",
-        "content": "That's fantastic! \u00bfDe qu\u00e9 tipo de modelo se trata?"
+        "content": "当然！很高兴和你用中文交流。你想聊什么呢？有什么想练习的吗？随时告诉我！"
     },
     {
         "role": "user",
-        "content": "Now I can have a conversation with you.\n"
+        "content": "Apa yang telah anda katakan?\n"
     },
     {
         "role": "assistant",
-        "content": "Great job! Just a small correction: \"Now I can have a conversation with you\" would be the correct way to say it. Keep up the good work!"
+        "content": "Maaf, saya tidak berbicara bahasa Melayu dengan baik. Saya boleh membantu anda berlatih dalam bahasa lain jika anda mahu. Ada sesuatu yang anda ingin bercakap atau berlatih?"
     },
     {
         "role": "user",
-        "content": "Thank you for that. That's awesome.\n"
+        "content": "回来\n"
     },
     {
         "role": "assistant",
-        "content": "You're welcome! I'm glad I could help. If you have any more questions or want to practice more, feel free to ask."
+        "content": "Terima kasih! Saya faham sekarang. Adakah anda ingin berbual atau berlatih dalam bahasa lain? Saya di sini untuk membantu anda."
     },
     {
         "role": "user",
-        "content": "I don't want to practice at all.\n"
+        "content": "¡Salid!\n"
     },
     {
         "role": "assistant",
-        "content": "That's totally fine! If you ever change your mind or have any questions, feel free to reach out. I'm here to help."
+        "content": "¡Claro! ¿En qué idioma te gustaría practicar ahora? Estoy aquí para ayudarte en lo que necesites. ¡No dudes en decirme cómo puedo colaborar contigo!"
     }
 ]

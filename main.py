@@ -37,7 +37,7 @@ class escuchar:
 class pensar:
     def __init__(self, modelo, texto, temperatura=0):
         self.texto = f'conversaciones/{texto}.json'
-        with open(self.texto, 'r') as file:
+        with open(self.texto, 'r', encoding='utf-8') as file:
             prompts = json.load(file)
         
         self.prompts = prompts
@@ -60,8 +60,17 @@ class pensar:
         self.prompts.append(self.respuesta)
 
     def memoria(self):
-        with open(self.texto, 'w') as file:
-            json.dump(self.prompts, file, indent=4)
+        with open(self.texto, 'w', encoding='utf-8') as file:
+            json.dump(self.prompts, file, indent=4, ensure_ascii=False)
+
+    def olvidar(self):
+        if len(self.prompts) < 3:
+            raise Exception("Muy pocos elementos para olvidar")
+        
+        del self.prompts[1]
+        del self.prompts[2]
+
+        self.memoria()
 
 class hablar:
     def __init__(self, modelo, voz):
@@ -93,14 +102,18 @@ def conversar(modelo_escuchar, modelo_pensar, prompt_inicial, modelo_hablar, voz
         oido.archivo_temporal()
         oido.transcripcion()
 
-        if oido.respuesta.lower() == "Salir":
+        if "salir" | "exit" in oido.respuesta.lower():
             break
+
+        
         print("Se escucho: ", oido.respuesta) # debug
 
         cerebro.procesar(oido.respuesta)
         print("El modelo responde: ", cerebro.reply) # debug
         cerebro.memoria()
-
+        if len(cerebro.prompts) > 10:
+            cerebro.olvidar()
+    
         boca.procesar(cerebro.reply)
         boca.archivo_temporal()
         boca.hablar()
