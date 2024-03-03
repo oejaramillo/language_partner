@@ -7,7 +7,7 @@ import json
 
 
 # Openai credentials
-openai_client = OpenAI(api_key='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')
+openai_client = OpenAI(api_key='')
 
 class escuchar:
     def __init__(self, modelo, reconocedor=sr.Recognizer()):
